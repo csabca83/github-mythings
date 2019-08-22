@@ -1,0 +1,30 @@
+ls-cd
+pwd-kiirassa a working placet
+/home/ccuser/workspace/blog/2015
+cd jan/memory/
+touch-uj txt
+mkdir startups/disruptors/
+touch startups/disruptors/tech.txt dfdf.txt sdfdf.txt
+cat filename.txt-kiiratom
+git init creates a new Git repository
+git status inspects the contents of the working directory and staging area
+git add adds files from the working directory to the staging area
+git diff shows the difference between the working directory and the staging area
+git commit -m 'szoveg' permanently stores file changes from the staging area in the repository
+git log shows a list of all previous commits
+git add origin "link"
+git pull origin master-letolti
+git push origin master-feltolti
+ha comitolunk akkor csinal egy snapshotot a local repoba,es ezaltal vannak megkulonboztetve a verziok!
+Csak akkor lesz a local repoba a file ha comitoljuk,kulonben csak a workspacen lesz!
+git add -A -all files adding
+git commit -a -m -all added files comiting,commit es add is,de csak azoknal amik mar egyszer bevoltak addva
+ha csinalok egy branchot pluszba akkorcsak abba a branchba fog valtozas tortenni
+git branch branchname
+git checkout branchname
+git merge branchname-bele rakja a brachba a branchot ahol vagy!
+ssh-keygen        -  ssh code generalasa
+/c/Users/laliv/.ssh/id_rsa.pub-ide van elmentve
+cat /c/Users/laliv/.ssh/id_rsa.pub
+ssh -T git@github.com
+git checkout 12345678 revert.txt

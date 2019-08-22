@@ -1,0 +1,21 @@
+<h1>text</h1>-kiiratas
+
+<body>-element
+  <a>nem mindegy buzerant?</a>-content
+  </body>-element
+
+<body>asdddsa
+  <h1>Hello World</h1>
+  <div><p>This paragraph is a child of the div element and a grandchild of the body element</p>
+  </div>  
+</body>
+
+<h1> — used for main headings. All other smaller headings are used for subheadings.
+<h2>
+<h3>
+<h4>
+<h5>
+<h6>-only with h
+h heading
+
+<div>--</div>-groupokra csinal

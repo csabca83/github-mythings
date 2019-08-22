@@ -1,0 +1,48 @@
+cd-Change directory
+cd ..-egyel visszavisz
+cd Desktop\Videos-egyszerre tobbet is ugorhatunk
+cd ..\..-take me back 2 directories
+D+TAB=Desktop
+dir=kiirja az osszes diectoryt
+dir Desktop\Slingshot
+dir /a-show hidden dirs too
+cls-clear your screen
+dir Desktop *py-csak az adott vegzodessel irja ki
+up and down-shows the previous texts
+h beirjuk a file nevet akkor megnyissa pl gyorsetterem.py
+ipconfig /?-szoftverer pl ipv4/ipv6
+mkdir -keszit
+rmdir-kitorli ha teljesen ures
+rmdir /s-teljesen kitorli
+home-visszavisz az elejere
+end-a vegere dob
+control+nyilak-a szavakra dob
+egyszerre tobbet is ugorhatunk a cd vel
+control+c=close
+path-ezzel irjuk meg a gepnek hogyha nem talal egy adott filet,akkor meg hol nezze meg
+wmic logicaldisk-bemutassa hogy mik vannak kapcsolodva a gephez
+wmic logicaldisk get name-csak a nevuket mutassa meg
+D:-atrakja a drivera
+tree-minden dir dirt megmutat
+color /?-szineket tudsz bealitani
+1. wmic
+2.diskdrive get status -megadja hogy milyen allapotpan van a harddrive
+sfc /scannow-system files scan in cdm/admin
+echo>textfile.txt
+echo 1>textfile.txt
+attrib/?-ezzel iratom ki mi milyen fajta fajl
+attrib-kiirassa a fajlokat plusz hogy milyenek
+attrib +h laller.txt-atrakja hidden fileba
+del filename-kitorli
+type filename-megnezhessuk mivan benne
+echoval >>-irhatunk bele
+dir >porky.txt-ezzel belemasoljuk a dirt egy fileba
+copy cmd.txt Testfolder
+xcopy-xcopy file destination /s-a subfoldereket is atrakaja
+xcopy/?
+move testfile destination
+rename bacon faszom-rename dirs
+systeminfo.exe
+ping weboldal-megadja a weboldal ipjet
+dvdvvds
+sads

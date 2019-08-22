@@ -1,0 +1,4 @@
+-ipconfig-al nezuk meg
+-ipv4 adress-local ip
+-default getaway-router
+-internet settings\change adapter options\properties\ipv4\properties
