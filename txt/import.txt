@@ -1,0 +1,9 @@
+tudunk importolni sajat programokat,a sajat programnak azonos dirbe kell lennie.pl import index
+az ilyen programokat modulnak nevezzuk!
+import pizza
+pizza.makepizza(size=3,szalonnas)
+pizza a file neve
+makepizza a benne talalhato def
+
+from module_name import function_name1 function_name2
+function1()-itt nem kell pontozni
