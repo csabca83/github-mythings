@@ -1,0 +1,29 @@
+class Cool(): -a classokat nagybetuvel irjuk hogy konyyeben lehessen olvasni!
+	pass -atugrik rajta ezaltal nem okozunk hibat hogyha a classba nem irunk bele semmit!
+
+facade_1=Facade()-instancet a classot,olyan mintha hivnank
+
+print(type(facade_1))
+<class '__main__.Facade'>-a main azt jelenti hogy ezt a filet futassuk!
+
+
+class Grade:-class megnevezes
+  minimum_passing=65-class variable(object)
+  szoj=30-class variable(object)
+number1=Grade()-a number1 a classbol fog dolgozni
+number2=Grade()-a number2 a classbol fog dolgozni
+print(number1.minimum_passing/number2.szoj)-a class variablek vannak belementve!!!
+ 
+def washing_brushes(self):  ==method!
+
+
+class Circle:
+  pi = 3.14
+  
+  def area(self, radius): -a self az a object,az mindenkeppen kell a methodba,mert annelkul nem tudjuk ki hivni 
+    return Circle.pi * radius ** 2 -igy vesszuk ki az objectbol az erteket!
+  
+circle = Circle()
+pizza_area = circle.area(12 / 2)
+teaching_table_area = circle.area(36 / 2)
+round_room_area = circle.area(11460 / 2)-igy hivjuk a defet
