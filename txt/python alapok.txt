@@ -457,7 +457,7 @@ lista2=['Csa'+' '+x for x in lista]
 
 winter_trees_full='\n'.join(winter_trees_lines)
 
-featuring.strip('!')-egyszerre csak egyet,listaknal nem hasznalhassuk
+featuring.strip('!')-egyszerre csak egyet,listaknal nem hasznalhassuk,mindig a string elejerol vagy vegorol szedi le
 
 string_name.replace(character_being_replaced, new_character)
 
@@ -481,3 +481,4 @@ def ember(first,last,**userinfo):
 dic=ember('lali','vendrics',faszom='kivan')-ilyenkor a keyre nem kell ekezet!
 print(dic)
 
+type(string)-kiirja hogy milyen adat,akar class dic,lista,boolean number

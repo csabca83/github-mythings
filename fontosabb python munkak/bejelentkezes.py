@@ -60,8 +60,6 @@ while True:
 			b=input('Add meg a passwordot!\t')
 			if b.lower()=='q':
 				continue
-			a=str(a)
-			b=str(b)
 			for key,value in user.items():
 				if key==a and value==b:
 					flag=True

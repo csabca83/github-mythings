@@ -1,3 +1,2 @@
-from index import kiir
-kiir()
-
+import index as i
+i.index('faszomkivan','a')
