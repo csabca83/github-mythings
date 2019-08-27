@@ -1,4 +1,4 @@
-class Cool(): -a classokat nagybetuvel irjuk hogy konyyeben lehessen olvasni!
+class Cool: -a classokat nagybetuvel irjuk hogy konyyeben lehessen olvasni!
 	pass -atugrik rajta ezaltal nem okozunk hibat hogyha a classba nem irunk bele semmit!
 
 facade_1=Facade()-instancet a classot,olyan mintha hivnank
@@ -27,3 +27,25 @@ circle = Circle()
 pizza_area = circle.area(12 / 2)
 teaching_table_area = circle.area(36 / 2)
 round_room_area = circle.area(11460 / 2)-igy hivjuk a defet
+
+
+class Dog():
+	"""A simple attempt to model a dog."""
+	def __init__(self, name, age):-ezaltal tudunk attribute irni a classba
+		"""Initialize name and age attributes."""
+		self.name = name-ezek altal tudunk a methodon kivul dolgozni vele!!!
+		self.age = age
+	def sit(self):
+		"""Simulate a dog sitting in response to a command."""
+		print(self.name.title() + " is now sitting.")
+	def roll_over(self):
+		"""Simulate rolling over in response to a command."""
+		print(self.name.title() + " rolled over!")
+my_dog = Dog('willie', 6)
+print("My dog's name is " + my_dog.name.title() + ".")
+print("My dog is " + str(my_dog.age) + " years old.")
+
+
+print(my_dog.name)-igy tudjuk kiiratni
+my_dog.sit()-igy calloljuk a modult
+a classt ugy kell elkepzelni mint egy importot
