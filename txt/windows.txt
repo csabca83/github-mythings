@@ -13,3 +13,4 @@ alt f4 ina desktop-updatenal is siman letud shutopolni
 tab-akar a entry valtasnal
 shift tab-previous entry
 physical adress=mac adress
+bit>hexadecimal>ASCII igy keresi ki a stringet a gep!
