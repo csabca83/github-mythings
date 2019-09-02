@@ -49,3 +49,22 @@ print("My dog is " + str(my_dog.age) + " years old.")
 print(my_dog.name)-igy tudjuk kiiratni
 my_dog.sit()-igy calloljuk a modult
 a classt ugy kell elkepzelni mint egy importot
+
+def __init__(self):
+	self.odometer=0		-default value csinalassa
+
+car.odometer=24-igy valtoztassuk directessen!
+
+
+def update(self,new_odometer):
+		self.odometer=new_odometer
+car.update(30)					-igy updatelem
+
+def increaseodometer(self,number):
+		self.odometer+=number -igy increaseljuk az odometert!
+
+
+class ExampleClass(object):
+  class_attr = 0
+  def __init__(self, instance_attr):
+    self.instance_attr = instance_attr
