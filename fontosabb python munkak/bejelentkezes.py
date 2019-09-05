@@ -115,7 +115,21 @@ while True:
 		admin_password=input('Kerem a jelszot!\t')
 		if admin_password=='987654321':
 			print('Szoj Lali!')
-			print(user)
-		else:
+			while True:
+				admin_q=input('Mit szeretnel?')
+				if admin_q=='k' or admin_q=='kiiratni':
+					print(user)
+				elif admin_q=='d' or admin_q=='delete':
+					while True:
+						admin_torolni=input('Add meg a felhasznalonevet:')
+						if admin_torolni=='q':
+							break
+						try:
+							del user[admin_torolni]						
+						except KeyError:
+							print('Nincs ilyen felhasznalonev!')
+				elif admin_q=='q':
+					break
+		else:			
 			print('Huzz a faszba!')
 			
