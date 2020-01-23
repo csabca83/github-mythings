@@ -1,0 +1,10 @@
+Mindenkepp ssh-t kell hasznalni
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+$ eval "$(ssh-agent -s)"-Start the ssh-agent in the background.
+$ ssh-add ~/.ssh/id_rsa-Add your SSH private key to the ssh-agent. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_rsa in the command with the name of your private key file.
+$ git remote -v-List your existing remotes in order to get the name of the remote you want to change.
+$ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git-Ezzel valtunk sshra httpsrol
+$ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git-Ezzel valtunk shhrol httpsre
+$ sudo apt-get install xclip-ezt installalni kell mivel ezzel a programmal kopizunk
+$ xclip -sel clip < ~/.ssh/id_rsa.pub-ezzel csinalok egy kopit
+
