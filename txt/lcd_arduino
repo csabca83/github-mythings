@@ -1,0 +1,12 @@
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
+//I2C pins declaration
+LiquidCrystal_I2C lcd(0x27, 16, 2);-- ezeket kell beimportalni
+
+lcd.begin()-Defining 16 columns and 2 rows of lcd display
+
+lcd.setCursor(0,0)-first is melyik karakter ,masodik szam-melyik sor
+
+lcd.print('ads')-kiiratvalamit
+
+lcd.clear()-clean the screeeen
