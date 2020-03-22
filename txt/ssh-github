@@ -8,3 +8,4 @@ $ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git-Ezzel val
 $ sudo apt-get install xclip-ezt installalni kell mivel ezzel a programmal kopizunk
 $ xclip -sel clip < ~/.ssh/id_rsa.pub-ezzel csinalok egy kopit
 
+az xclippel kimasojla a public keyt,azt kell csak egyszeruen a bal klikkel beilleszteni.
