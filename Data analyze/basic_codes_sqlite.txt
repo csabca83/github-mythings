@@ -2,6 +2,9 @@ SELECT * FROM celebs; -- Tablazatab szedi az osszes erteket a celebs databasebol
 
 SELECT * FROM celebs;-Megegyszer beutve kitorli a a szedett tablazatot.
 
+SELECT name FROM celebs;-Kirja a query resultba a megadott keresest.
+
+
 CREATE TABLE table_name (
    column_1 data_type, 
    column_2 data_type, 
@@ -9,3 +12,33 @@ CREATE TABLE table_name (
 );
 
 
+
+INSERT INTO celebs(id,name,age) -behelyezi a celebek koze,a zarojelekben megadott sorokba-nem kell utana vesszo
+VALUES(3,'SZIO',4); -utana rogton kovetkeznie kell a valuesnak es abban a sorrendben kell neki megadnunk.
+
+
+ALTER TABLE celebs 
+ADD COLUMN twitter_handle TEXT; -ezzel hozza adhatunk egy columnt ha nem irunk semmillyen erteket akkor 0 lesz tehat nem lesz megadva hogy mit fogadjon.
+
+
+UPDATE celebs 
+SET twitter_handle = '@taylorswift13' -updateljuk az adott sort ,A settel allitjuk be
+WHERE id = 4; ahol a id columnban 4es van
+
+
+
+
+DELETE FROM table
+WHERE condition
+LIMIT 5; -a limittel tudjuk hogy mennyit torolhet maximum
+
+
+
+
+
+CREATE TABLE celebs (
+   id INTEGER PRIMARY KEY, -csak egy primary keyes lehet,ha ugyanaz akkor nem engedi beszurni
+   name TEXT UNIQUE, -mindegyik sorban mas ertek abba kulonbozik a primary keytol hogy egy tableban tobb unique row islehet
+   date_of_birth TEXT NOT NULL, -ha nincs erteke az adott rownak akkor nem szurja be
+   date_of_death TEXT DEFAULT 'Not Applicable' -a default argument lesz minden sorban
+);-ezeket constraintsnek nevezzuk

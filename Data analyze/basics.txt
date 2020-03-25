@@ -1,11 +1,10 @@
-Relational databases store data in tables. Tables can grow large and have a multitude of columns and records. Relational database management systems (RDBMSs) use SQL (and variants of SQL) to manage the data in these large tables. The RDBMS you use is your choice and depends on the complexity of your application.
-
-
-A column is a set of data values of a particular type. -1fajta data lehet(a columnak fontosabb az erteke)
-
-A row is a single record in a table-ezek cssak sima ertekek
+A relational database is a database that organizes information into one or more tables.
+A table is a collection of data organized into rows and columns.
 
 CREATE TABLE(valami);-a create table az clause,valami -statement
 
-ertekek-INTEGER TEXT(STRING) ,de itt az utobbival nevezzuk
+Integer - a whole number. Text - a text string. Date - a date. Real - a decimal number.
+
+
+
 
