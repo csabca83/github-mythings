@@ -1,0 +1,8 @@
+SyntaxError means there is something wrong with the way your program is written
+NameError occurs when the Python interpreter sees a word it does not recognize
+ZeroDivisionError. Python will raise this error when attempting to divide by 0.
+
+
+
+"""czxxzxzxzxzcx
+zxcxczxzcx"""-multiline string

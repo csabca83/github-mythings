@@ -1,0 +1,39 @@
+boolean expression -amikor kint esik az eso,ma szerda van-amit elehet donteni igazi e ,a sztem ez nem jo-ez csak a en szempontombol nem jo,lehet maseba igen ezert ez nem az
+True False-boolean value
+
+
+
+
+
+def check_leap_year(year):                        ---          Handling Exceptions in Python
+  is_leap_year = False
+  if year % 4 == 0:
+    is_leap_year = True
+
+try:
+  check_leap_year(2018)
+  print(is_leap_year) 
+  # The variable is_leap_year is declared inside the function
+except:
+  print('Your code raised an error!')
+
+
+
+
+a = 2                                               ---                   Comparison Operators
+b = 3
+a < b  # evaluates to True
+a > b  # evaluates to False
+a >= b # evaluates to False
+a <= b # evaluates to True
+a <= a # evaluates to True
+
+
+
+
+not True     # Evaluates to False                                      not operator
+not False    # Evaluates to True
+1 > 2        # Evaluates to False
+not 1 > 2    # Evaluates to True
+1 == 1       # Evaluates to True
+not 1 == 1   # Evaluates to False
