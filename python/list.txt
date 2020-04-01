@@ -1,0 +1,117 @@
+primes = [2, 3, 5, 7, 11]
+print(primes)
+
+empty_list = []
+
+lista=list(range(1,7) ha nem tesszuk oda a listet akkor nem fogja kiirni, csak a helyet
+
+
+items = ['cake', 'cookie', 'bread']
+total_items = items + ['biscuit', 'tart']
+print(total_items)
+# Result: ['cake', 'cookie', 'bread', 'biscuit', 'tart']
+
+
+
+
+owners_dogs = zip(owners_names, dogs_names)                                           ---- Aggregating Iterables Using
+zip()
+print(owners_dogs)
+# Result: [('Jenny', 'Elphonse'), ('Sam', 'Dr.Doggy DDS'), ('Alexis', 'Carter')]
+
+
+
+
+
+items = [1, 2, 3, 4, 5, 6]
+
+# All items from index `0` to `3`
+print(items[:4])
+
+# All items from index `2` to the last item, inclusive
+print(items[2:])
+
+
+
+
+backpack = ['pencil', 'pen', 'notebook', 'textbook', 'pen', 'highlighter', 'pen']
+numPen = backpack.count('pen')
+print(numPen)
+# Output: 3
+
+
+
+
+knapsack = [2, 4, 3, 7, 10]
+size = len(knapsack)
+print(size) 
+# Output: 5
+
+
+
+exampleList = [4, 2, 1, 3]
+exampleList.sort()
+print(exampleList)
+# Output: [1, 2, 3, 4]
+
+
+
+
+
+
+
+
+soups = ['minestrone', 'lentil', 'pho', 'laksa']
+soups[-1]   # 'laksa'
+soups[-3:]  # 'lentil', 'pho', 'laksa'
+soups[:-2]  # 'minestrone', 'lentil'
+
+
+
+lista.clear()
+
+
+
+
+
+tools = ['pen', 'hammer', 'lever']
+tools_slice = tools[1:3] # ['hammer', 'lever']
+tools_slice[0] = 'nail'
+
+# Original list is unaltered:
+print(tools) # ['pen', 'hammer', 'lever']
+
+
+lista1=lista2[:]-ezzel coppyzunk az egesz listat mivel nincs megadva mettol meddig fusson
+
+
+
+
+unsortedList = [4, 2, 1, 3]
+sortedList = sorted(unsortedList)
+print(sortedList)
+# Output: [1, 2, 3, 4]
+
+lista.remove('6')
+
+del lista[0]
+
+popped_motorcycle = motorcycles.pop(0) -kiveszi abbol a listabol de nem dobja el,pl ezutan ezt visszatudjuk rakni egy masik listaba
+
+
+min(digits)
+max(digits)
+sum(digits)
+
+lista.clear()-mindent kitorol a listabol
+
+
+
+lista1=lista2
+ha igy egyenlove tesszuka ket listat akkor barmelyikbe es raknk bele meg valamit az a masikba is megfog jelenni
+
+if lista: -ha van a listaban ertek
+else:-ha nics a listaban semmise
+
+if x in lista -megnezi benne e van a listaban az a adott ertek
+

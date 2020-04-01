@@ -1,0 +1,4 @@
+tar xvf kicsomagolja a tar.xz vegzodesu mappakat
+sudo apt install
+sudo apt remove
+sudo apt purge -ilyenkor az extension packageokkal torli ki

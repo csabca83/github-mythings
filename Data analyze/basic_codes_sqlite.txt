@@ -29,7 +29,7 @@ WHERE id = 4; ahol a id columnban 4es van
 
 
 DELETE FROM table
-WHERE condition
+WHERE condition        -ezzel sort torlunk ki
 LIMIT 5; -a limittel tudjuk hogy mennyit torolhet maximum
 
 

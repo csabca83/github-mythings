@@ -1,0 +1,4 @@
+olyan mint a lista csak nem lehet se appendelni,csak kiiratni
+tuple=(1,2)
+tuple=(1) -csak igy lehet rajta valtoztatni
+
