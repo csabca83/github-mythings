@@ -1,0 +1,8 @@
+dic={'lali':{'igennagycsavo':'kiraly'},
+	'bojler':{'utolso':'gimis fasz'}}
+while True:
+	question=str(input('KIRE VAGY KIVANCSI'))
+	if question=='lali':
+		print('Ezek a tulajdonsagai:')
+		for x,y in dic['lali'].items():
+				print(x,'\n',y)
