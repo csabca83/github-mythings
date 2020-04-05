@@ -6,3 +6,54 @@ while True:
 		print('Ezek a tulajdonsagai:')
 		for x,y in dic['lali'].items():
 				print(x,'\n',y)
+
+
+
+dic={'lali':['je','igennagycsavo']}
+for x in dic['lali']:
+	print(x)
+-ezzel tudunk a directoriben levo listat loopolni
+
+
+
+
+
+
+
+
+ls=[{'lali':['igennagy','faszagyerek']},
+	{'bojler':['okoskodo','feminista']},
+	{'konkoly':['kicsit beteg','buzi']}]
+for x in ls:
+	for key,value in x.items():
+		print(key)
+		for y in value:
+			print('\t',y)
+
+
+if 'lali' in dic:
+	print('benne van')
+				--ezzel a dicbe meg tudjuk nezni benne e van a key,ha nincs benne if lali is not in dic:
+
+
+
+dic={'lali':{'lakhely':'kisudvarnok',
+				'kor':19,
+				'nem':'férfi'},
+	'konkoly':{'lakhely':'kisudvarnok',
+				'kor':18,
+				'nem':'kitudja'},
+				}
+for key,value in dic.items():
+	if key=='lali':
+		for x,y in value.items():
+			print(str(x)+':'+str(y))-ezzel loopoljuk a nestes listat
+
+
+
+
+for x in dic:
+	if x=='lali':
+		dic['lali']['faszmeret']=30 
+-igy tudunk hozza adni a nestelt dichez keyt,ez kurvajo
+
