@@ -1,0 +1,18 @@
+flag=True
+while flag:
+	question=input('Akkarod hogy ez a program orokke fusson?')
+	if question=='q':
+		flag=False
+	elif question=='b':
+		break
+	elif question=='c':
+		continue -- visszamegy a while elejere,tehat a continue utaniak nem futnak le
+	print('te retkes')
+
+
+un_users=['alice','peti','erika','robi','peti']
+users=[]
+while 'peti' in un_users:
+	un_users.remove('peti')
+print(un_users)
+

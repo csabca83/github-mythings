@@ -1,22 +1,24 @@
 value=5-global value(ez azert jo mert kintrol is tudom hivni)
-def write_a_book(character, setting, special_skill,osz=4(ez keyword ardument): -parameterek,maga a def az funkcio
+def write_a_book(character, setting, special_skill,osz=4): -parameterek,maga a def az funkcio
   sum=character+setting+special_skill+value
   return sum
-ertek=write_a_book(1,setting=2,3)
+ertek=write_a_book(1,setting=2,3)-arguments
+azok a argumetnek amelyeket jo helyre teszunk azok a positional argumentek
+
 
 
 
 
 
 return multiple values
-def square_point(x, y, z):
+def square_point(x, y=6, z): -igy a y parameternek default valuja a 6
   x_squared = x * x
   y_squared = y * y
   z_squared = z * z
   # Return all three values:
   return x_squared, y_squared, z_squared
 
-three_squared, four_squared, five_squared = square_point(3, 4, 5)
+three_squared, four_squared, five_squared = square_point(3, 4, z=5)-a z igy keyword argument
 
 
 def error():
