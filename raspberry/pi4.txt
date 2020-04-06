@@ -1,0 +1,24 @@
+nas-samba server
+vpn server-openvpn --https://www.youtube.com/watch?v=8HCb2g8IT8I
+
+firewall-ufw
+sudo ufw enable-ezzel a aktivaljuk be
+sudo ufw disable-ezzel ki
+sudo ufw allow 22-portok engedelyezve
+sudo ufw deny 22-portok ki
+sudo ufw allow ssh-az ssht engedelyezzuk mindegy milyen port,de altalaban 22re teszi magatol
+sudo ufw status-miket allitottunk be eddig
+sudo ufw limit ssh/tcp -ha 30 masodpercen belul sshval 6szor probalt csatlakozni,akkor deniedolja a csatlakozast
+
+
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo nano /etc/fail2ban/jail.local
+[ssh]
+enabled  = true
+port     = ssh
+filter   = sshd
+logpath  = /var/log/auth.log
+maxretry = 6 -mennyiszer lehet probalkozni
+banacction(benne van a fajlba)-ha negativ szamot adsz meg orokre bannolja az ipt,ha pozitivit akkor 10m(10percre bannolja)
+https://www.digitalocean.com/community/tutorials/how-fail2ban-works-to-protect-services-on-a-linux-server
+
