@@ -5,3 +5,5 @@ sudo apt purge -ilyenkor az extension packageokkal torli kia
 
 
 sudo gedit /etc/default/apport &-ezzel a system program problem idegesito uzeneteket lehet kikapcsolni 0as ertekkel,1essel fog jonni
+
+sudo -s-igy rootban vagy nem fogja minden szarer a sudot kerni
