@@ -2,3 +2,6 @@ tar xvf kicsomagolja a tar.xz vegzodesu mappakat
 sudo apt install
 sudo apt remove
 sudo apt purge -ilyenkor az extension packageokkal torli kia
+
+
+sudo gedit /etc/default/apport &-ezzel a system program problem idegesito uzeneteket lehet kikapcsolni 0as ertekkel,1essel fog jonni
