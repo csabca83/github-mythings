@@ -5,4 +5,4 @@ string.lstrip-kitorli a whitespacet a bal oldalon
 str(a)
 int(a)
 
-
+ha inputnal entert nyomunk akkor empty stringnek veszi=''

@@ -23,3 +23,39 @@ three_squared, four_squared, five_squared = square_point(3, 4, z=5)-a z igy keyw
 
 def error():
    raise ValueError     -akarmilyen errort tudunk csinalni
+
+
+def fullname(first,last,middle=''):
+	if middle:                           ---       hogyha a middlenek van valami erteke tehat,ha van bele irva,mer a python a empty stringet falsenak veszi
+		full_name=first+' '+middle+' '+lastn
+	else:
+		full_name=first+''+last
+	return full_name.title()
+print(fullname('lali','vendrics',middle='nagyfaszu'))-optional argument,mivel empty string es ha nem irunk hozza ertekekt mintha ott se lenne
+
+
+
+
+
+return_dic(name,age):      -igy returnoljuk a dictionaryt
+	dic={age:name}
+	return dic
+
+
+
+
+
+
+
+person=[]
+def fullname(first,last,middle=''):  -- igy csinaltunk egy programot ami fnkcioval berakja a dicbe az embereket
+	if middle:
+		dic={'fname':first,'middle':middle,'lname':last} 
+	else:
+		dic={'fname':first,'lname':last}
+	person.append(dic)
+fullname('lali','vendrics',middle='vadallat')
+fullname('sdasad','dsa')
+for x in person:
+	print(x)
+
