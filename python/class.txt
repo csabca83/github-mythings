@@ -1,0 +1,13 @@
+class Restaurant():
+	def __init__(self,name,type_r):   --az initet mindig automatikusan vegre hajtja,a defeket methodoknak hivjuk
+		self.name=name             --- a selfek segitsegevel kommunikalunk a classban
+		self.type_r=type_r            -- a self.namere azert van szukseg hogy kivul a class bol mikor letrehozzuk az instancet,tudja eertelmezni,ezeket (attributes)nak nevezzuk
+	def describe_restaurants(self):
+		print('A neve:',self.name)
+		print('A fajtaja:',self.type_r)
+	def open_restaurant(self):
+		print('Nyitva van')
+kiss_burger=Restaurant('kissburger','hamburgeres')         -instancet csinalunk
+print(kiss_burger.type_r)-igy tudjuk az instancebol kiiratni a valuekat
+kiss_burger.describe_restaurants()   -igy tudjuk a defeket kihivni
+
