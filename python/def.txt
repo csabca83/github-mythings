@@ -4,7 +4,7 @@ def write_a_book(character, setting, special_skill,osz=4): -parameterek,maga a d
   return sum
 ertek=write_a_book(1,setting=2,3)-arguments
 azok a argumetnek amelyeket jo helyre teszunk azok a positional argumentek
-
+amit a return utan teszunk a defbe azt nem hajtsa vegre
 
 
 
@@ -58,4 +58,28 @@ fullname('lali','vendrics',middle='vadallat')
 fullname('sdasad','dsa')
 for x in person:
 	print(x)
+
+
+def valami(toppings):
+	print(toppings)
+valami(['szoji','te'])       -igy tudunk listat berakni positional argumentnek
+
+
+def valami(*toppings): -ilyenkor a python egy empty tuplet csinal es abba rakja bele
+	print(toppings)
+valami('sonkas','szalamis','kukoricas') -arbitary number of arguments
+
+
+def build_person(first_name,last_name,**userinfo): -ilyenkor empty dicet csinal
+	profile={}
+	profile[first_name.title()]=last_name.title()
+	for key,value in userinfo.items():   -megkell loopolnunk a dicet,hogy hozza ferjunk a tartalmahoz
+		profile[key]=value
+	return profile
+dic=build_person('lali','vendrics',fasza='orbitalis',kaloria=2600)-igy kell a dicbe megadni, keyre nem kell ''
+print(dic)
+
+
+
+
 
