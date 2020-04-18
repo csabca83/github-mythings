@@ -1,0 +1,23 @@
+ugyanabban a mappaban kell lennie,a modulnak is es a programnak is
+
+import pizza
+pizza.rendeles(x)
+
+from pizza import rendeles
+rendeles()
+
+import pizza as p
+p.rendeles         -ilyenkor aliast adunk meg
+
+
+from pizza import rendeles as ren
+ren(x)
+
+
+from pizza import* --- ilyenkor az osszes modult be importalja
+
+import module_name
+from module_name import function_name
+from module_name import function_name as fn
+import module_name as mn
+from module_name import *

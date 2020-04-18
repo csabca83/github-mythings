@@ -76,7 +76,7 @@ def build_person(first_name,last_name,**userinfo): -ilyenkor empty dicet csinal
 	for key,value in userinfo.items():   -megkell loopolnunk a dicet,hogy hozza ferjunk a tartalmahoz
 		profile[key]=value
 	return profile
-dic=build_person('lali','vendrics',fasza='orbitalis',kaloria=2600)-igy kell a dicbe megadni, keyre nem kell ''
+dic=build_person('lali','vendrics',fasza='orbitalis',kaloria=2600)-igy kell a dicbe megadni, ezek igy arbitary keyword argumentek
 print(dic)
 
 
