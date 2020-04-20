@@ -11,3 +11,20 @@ kiss_burger=Restaurant('kissburger','hamburgeres')         -instancet csinalunk
 print(kiss_burger.type_r)-igy tudjuk az instancebol kiiratni a valuekat
 kiss_burger.describe_restaurants()   -igy tudjuk a defeket kihivni
 
+
+
+class Car:
+	def __init__(self,marka,ar):
+		self.marka=marka
+		self.ar=ar
+		self.km=100000  --- default value
+	def osszegzes(self):
+		print('marka',self.marka)
+		print('ar',self.ar)
+		print('km',self.km)
+	def updater(self,uj_km):
+		self.km=uj_km   --- ezzel valtoztatom meg a default valuer
+fabia=Car(marka='skoda',ar=1500)
+fabia.updater(15)
+fabia.osszegzes()
+
