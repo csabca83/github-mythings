@@ -28,3 +28,19 @@ fabia=Car(marka='skoda',ar=1500)
 fabia.updater(15)
 fabia.osszegzes()
 
+
+class Faszom:
+	def __init__(self,nev,faszmeret):
+		self.faszmeret=faszmeret
+		self.nev=nev
+	def kiiratas(self):
+		if self.nev=='Lali':
+			if self.faszmeret<35:
+				print('Hulye vagy eccso')
+			else:
+				print('stiles',self.faszmeret)
+		else:
+			print('te meg kiapicsa vagy')
+me=Faszom('Lali',50)
+me.kiiratas()
+
