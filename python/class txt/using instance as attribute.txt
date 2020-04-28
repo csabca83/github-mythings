@@ -1,0 +1,28 @@
+akkor hasznaljuk ha nem akarjuk hogy egy class nagyon hosszu legyen egy class
+
+class Battery():
+	def __init__(self,jotalas='2 ev'):    -- egy igy optimal value,mivel minden autora ekkora jotalast akarunk
+		self.jotalas=jotalas
+	def describeb(self):                  -- ez egy modul  a jotalasra
+		print(self.jotalas)
+class Car():
+	def __init__(self,name,km):
+		self.name=name
+		self.km=km
+		self.megjegyzes=''
+		self.bjotalas=Battery()     --- a bjotalas az egy instance
+	def describe(self):
+		print(self.name)
+		print(self.km)
+		print(self.megjegyzes)
+		self.bjotalas.describeb()  --- es a bjotalas instancebol a describe modult kiirassuk
+class Elektro(Car):
+	def __init__(self,name,km):
+		super().__init__(name,km)
+		self.megjegyzes='Ez elektromos auto'
+class Benzines(Car):
+	def __init__(self,name,km):
+		super().__init__(name,km)
+		self.megjegyzes='Ez benzines auto'
+my_tesla=Car(name='Tesla',km=20)
+my_tesla.describe()
