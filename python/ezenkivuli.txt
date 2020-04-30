@@ -1,7 +1,7 @@
 \t-tab
 \n-newline
 string.rstrip()-kitorli a whitespacet a jobb oldalon
-string.lstrip-kitorli a whitespacet a bal oldalon
+string.lstrip()-kitorli a whitespacet a bal oldalon
 str(a)
 int(a)
 

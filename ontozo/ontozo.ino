@@ -1,10 +1,10 @@
-#include <dht.h>
+#include <dht11.h>
 #include <LiquidCrystal_I2C.h>
 #include <DallasTemperature.h>
 #define ONE_WIRE_BUS 6 
 #define DHT11_PIN 7
 LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);
-dht DHT;
+dht11 DHT11;
 OneWire oneWire(ONE_WIRE_BUS); // Setup a oneWire instance to communicate with any OneWire devices  
 // (not just Maxim/Dallas temperature ICs) 
 DallasTemperature sensors(&oneWire);// Pass our oneWire reference to Dallas Temperature. 
@@ -26,20 +26,21 @@ void setup(){
   Serial.begin(9600);
   sensors.begin();
   pinMode(8,INPUT_PULLUP);   
-  pinMode(9,OUTPUT);
+  pinMode(11,OUTPUT);
   pinMode(10,INPUT_PULLUP);
+  pinMode(12,INPUT_PULLUP);
   pinMode(5,OUTPUT);}
 void loop(){
-  int chk = DHT.read11(DHT11_PIN);
+  int chk = DHT11.read(DHT11_PIN);
   light=analogRead(A3);
   light=1023-light;
   sensors.requestTemperatures();
   float vizh=sensors.getTempCByIndex(0);
-  float homerseklet=DHT.temperature;
-  float paratartalom=DHT.humidity;
+  float homerseklet=DHT11.temperature;
+  float paratartalom=DHT11.humidity;
   moisture=analogRead(A1);
   moisture=1023-moisture;
-  Serial.println(moisture);                                                                                 // Serial.println(sensors.getTempCByIndex(0)); //You can have more than one DS18B20 on the same bus.  
+  Serial.println(light);                                                                                 // Serial.println(sensors.getTempCByIndex(0)); //You can have more than one DS18B20 on the same bus.  
                                                                                     // 0 refers to the first IC on the wire 
   gomb2=digitalRead(12);
   if (gomb2==0){
@@ -48,7 +49,7 @@ void loop(){
     else if (hang==600){
       hang=0;}}
   
-  if (light<950){
+  if (light<870){
     fhiba=0;}
   else{fhiba=1;}
 
@@ -60,7 +61,7 @@ void loop(){
     phiba=0;}
   else{phiba=1;}
 
-  if (moisture>300){
+  if (moisture>150){
     mhiba=0;}
   else{mhiba=1;}  
  
@@ -253,7 +254,7 @@ void loop(){
 
 
   
-  gomb=digitalRead(13);
+  gomb=digitalRead(10);
   if (gomb==0){
     if (allapot==0){
       allapot=1;}

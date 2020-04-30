@@ -115,3 +115,4 @@ else:-ha nics a listaban semmise
 
 if x in lista -megnezi benne e van a listaban az a adott ertek
 
+lista2=[x**2 for x in lista2]

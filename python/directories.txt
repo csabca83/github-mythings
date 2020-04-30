@@ -57,3 +57,4 @@ for x in dic:
 		dic['lali']['faszmeret']=30 
 -igy tudunk hozza adni a nestelt dichez keyt,ez kurvajo
 
+dic['csirkemell']['mitzabal']='kukorica'
