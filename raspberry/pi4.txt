@@ -1,4 +1,4 @@
-nas-samba server
+nas-samba server --https://pimylifeup.com/raspberry-pi-samba/
 vpn server-openvpn --https://www.youtube.com/watch?v=8HCb2g8IT8I
 
 firewall-ufw
@@ -22,3 +22,5 @@ maxretry = 6 -mennyiszer lehet probalkozni
 banacction(benne van a fajlba)-ha negativ szamot adsz meg orokre bannolja az ipt,ha pozitivit akkor 10m(10percre bannolja)
 https://www.digitalocean.com/community/tutorials/how-fail2ban-works-to-protect-services-on-a-linux-server
 
+
+sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi alice -igy adunk a usernek mindenre root jogot
