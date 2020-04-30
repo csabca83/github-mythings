@@ -5,7 +5,9 @@ sudo apt purge -ilyenkor az extension packageokkal torli kia
 sudo dpkg -i a deb csomagokat csomagolom ki
 sudo apt-get install -f    -- ezzel instalalom bent a csomagban ha nem talalom az install.sh -t
 sudo gedit /etc/default/apport &-ezzel a system program problem idegesito uzeneteket lehet kikapcsolni 0as ertekkel,1essel fog jonni
-sudo install -f folder --amiben nincs install.sh
+sudo apt install gdebi-core -- ez fogja beinstallani a deb filet
+sudo gdebi example.deb
+
 sudo -s-igy rootban vagy nem fogja minden szarer a sudot kerni
 
  nm-connection-editor -ezzel betudjuk allitani a vpnt
