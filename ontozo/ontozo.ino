@@ -1,4 +1,4 @@
-#include <dht11.h>
+#include <dht11.h>                              //Be importálom a librariket.
 #include <LiquidCrystal_I2C.h>
 #include <DallasTemperature.h>
 #define ONE_WIRE_BUS 6 
@@ -9,17 +9,18 @@ OneWire oneWire(ONE_WIRE_BUS); // Setup a oneWire instance to communicate with a
 // (not just Maxim/Dallas temperature ICs) 
 DallasTemperature sensors(&oneWire);// Pass our oneWire reference to Dallas Temperature. 
 
-int moisture;
+int moisture;    //szenzorok számai
 int light;
-int gomb;
+int gomb;        //gombok
 int gomb2;
-int allapot=0;
-int hang=600;
-int fhiba;
-int phiba;
-int hhiba;
-int mhiba;
-int vhiba;
+int fhiba;   //fény    // szenzorhibak,hogyha nem megfelelő értéket adnak vissza,akkor az értékük 1es lesz
+int phiba;   //páratartalom
+int hhiba;   //külső hőmérséklet
+int mhiba;   // moisture,föld víztartalma
+int vhiba;   // víz hőmérséklete 
+int allapot=0; // Az lcd-én épp melyik értéket jelenítem meg,gombnyomással nő az értéke 2ig,után kinullázódik.Ha hibajelzés van nincs módunk tovább lépni.
+int hang=600;  //Hangszóró értéke
+
 void setup(){
   lcd.begin(16,2);
   lcd.backlight();               //kell egy ertek osszehasonlito az elejen utana egy lcdre kulon iffek
@@ -30,26 +31,26 @@ void setup(){
   pinMode(10,INPUT_PULLUP);
   pinMode(12,INPUT_PULLUP);
   pinMode(5,OUTPUT);}
+
 void loop(){
   int chk = DHT11.read(DHT11_PIN);
   light=analogRead(A3);
-  light=1023-light;
+  light=1023-light;        // a light resistorjaim fény hatására csökkentették az értéküket,ezután növelni kezdik.
   sensors.requestTemperatures();
   float vizh=sensors.getTempCByIndex(0);
   float homerseklet=DHT11.temperature;
   float paratartalom=DHT11.humidity;
-  moisture=analogRead(A1);
-  moisture=1023-moisture;
-  Serial.println(light);                                                                                 // Serial.println(sensors.getTempCByIndex(0)); //You can have more than one DS18B20 on the same bus.  
-                                                                                    // 0 refers to the first IC on the wire 
-  gomb2=digitalRead(12);
+  moisture=analogRead(A1);                                   // adatok bekérése
+  moisture=1023-moisture;                                                                                
+                                                                                     
+  gomb2=digitalRead(12);                   //hibaüzenetnél szól a hangszóró,a gomb lenyomásával némíthassuk
   if (gomb2==0){
     if (hang==0){
       hang=600;}
     else if (hang==600){
       hang=0;}}
   
-  if (light<870){
+  if (light<870){                         // ha nem megfelelő az érték,akkor a hibánál 1es lesz
     fhiba=0;}
   else{fhiba=1;}
 
@@ -71,18 +72,18 @@ void loop(){
   
   
   
-  if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){
+  if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){      // minden eshetőségnél kiírja,hogy melyik érték nem stimmel,egyszerre 2 értéket maximum.
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a feny");
     lcd.setCursor(0,1);
     lcd.print(light);
-    if (hang==0){noTone(11);}
+    if (hang==0){noTone(11);}          //ha a hang 0,nemszól a riasztó ellenkező esetben igen.Kikellet kapcsolnom  a riasztót mivel 0 frekvenciánál is adott ki magából hangot.
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,LOW);               // a relé kikapcsolt állapotban marad,addig amíg csak a föld víztartalma jelez hibát.Ezzel azt oldjuk meg,hogy nem kezd el délben 40 fokos vízzel öntözni :)
     delay(20);}
   
-  else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==0){
+  else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==0){            // A sok if az egyik dolog ami zavar,de mivel minden varációt kiakarok iratni,máskép nem tudtam megoldani.
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a homerseklet");
@@ -241,7 +242,7 @@ void loop(){
     noTone(11);
     digitalWrite(5,LOW);}
   
-  else{
+  else{                                          // hogyha 3 vagy több érték nem megfelelő
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("2-nel tobb ertek");
@@ -254,7 +255,7 @@ void loop(){
 
 
   
-  gomb=digitalRead(10);
+  gomb=digitalRead(10);   //a gombbal variálom az állapotokat.
   if (gomb==0){
     if (allapot==0){
       allapot=1;}
@@ -264,7 +265,7 @@ void loop(){
       allapot=0;}}
   
  
-  if (allapot==0 && fhiba==0 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){
+  if (allapot==0 && fhiba==0 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){     //csak akkor érvényesül ha nincs szükség a hibajelzésre.
    lcd.clear();
    lcd.setCursor(0,0); 
    lcd.print("Temp:");
