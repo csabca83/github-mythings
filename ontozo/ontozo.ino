@@ -80,7 +80,7 @@ void loop(){
     lcd.print(light);
     if (hang==0){noTone(11);}          //ha a hang 0,nemszól a riasztó ellenkező esetben igen.Kikellet kapcsolnom  a riasztót mivel 0 frekvenciánál is adott ki magából hangot.
     else{tone(11,hang);}
-    digitalWrite(5,LOW);               // a relé kikapcsolt állapotban marad,addig amíg csak a föld víztartalma jelez hibát.Ezzel azt oldjuk meg,hogy nem kezd el délben 40 fokos vízzel öntözni :)
+    digitalWrite(5,HIGH);               // a relé kikapcsolt állapotban marad,addig amíg csak a föld víztartalma jelez hibát.Ezzel azt oldjuk meg,hogy nem kezd el délben 40 fokos vízzel öntözni :)
     delay(20);}
   
   else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==0){            // A sok if az egyik dolog ami zavar,de mivel minden varációt kiakarok iratni,máskép nem tudtam megoldani.
@@ -91,7 +91,7 @@ void loop(){
     lcd.print(homerseklet);
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
   else if(fhiba==0 && hhiba==0 && phiba==1 && mhiba==0 && vhiba==0){
@@ -102,7 +102,7 @@ void loop(){
     lcd.print(paratartalom);
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
   
@@ -114,7 +114,7 @@ void loop(){
     lcd.print(moisture);
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,HIGH);
+    digitalWrite(5,LOW);
     delay(20);}
   
   else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==1){
@@ -125,7 +125,7 @@ void loop(){
     lcd.print(vizh);
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
   else if(fhiba==0 && hhiba==1 && phiba==1 && mhiba==0 && vhiba==0){
@@ -136,7 +136,7 @@ void loop(){
     lcd.print("Nagy a paratartalom");
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
   else if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==1 && vhiba==0){
@@ -147,7 +147,7 @@ void loop(){
     lcd.print("Keves a vizt.");
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
   else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==1 && vhiba==0){
@@ -158,7 +158,7 @@ void loop(){
     lcd.print("Keves a vizt.");
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
   else if(fhiba==0 && hhiba==0 && phiba==1 && mhiba==1 && vhiba==0){
@@ -169,7 +169,7 @@ void loop(){
     lcd.print("Nagy a paratartalom:");
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
   else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==1 && vhiba==1){
@@ -180,7 +180,7 @@ void loop(){
     lcd.print("Nagy a vizho");
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
 
   else if(fhiba==1 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==0){
@@ -191,7 +191,7 @@ void loop(){
     lcd.print("Nagy a homerseklet");
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
   else if(fhiba==1 && hhiba==0 && phiba==1 && mhiba==0 && vhiba==0){
@@ -202,7 +202,7 @@ void loop(){
     lcd.print("Nagy a paratartalom:");
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
  else if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==1){
@@ -213,7 +213,7 @@ void loop(){
     lcd.print("Nagy a vizho:");
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
   else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==1){
@@ -224,7 +224,7 @@ void loop(){
     lcd.print("Nagy a vizho");
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
   else if(fhiba==0 && hhiba==0 && phiba==1 && mhiba==0 && vhiba==1){
@@ -235,12 +235,12 @@ void loop(){
     lcd.print("Nagy a paratartalom");
     if (hang==0){noTone(11);}
     else{tone(11,hang);}
-    digitalWrite(5,LOW);
+    digitalWrite(5,HIGH);
     delay(20);}
   
-  else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){
+  else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){  //ha minden érték megfelelő
     noTone(11);
-    digitalWrite(5,LOW);}
+    digitalWrite(5,HIGH);}
   
   else{                                          // hogyha 3 vagy több érték nem megfelelő
     lcd.clear();
