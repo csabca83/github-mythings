@@ -24,3 +24,4 @@ https://www.digitalocean.com/community/tutorials/how-fail2ban-works-to-protect-s
 
 
 sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi alice -igy adunk a usernek mindenre root jogot
+blink -http://help.blynk.cc/en/articles/583104-how-to-install-node-js-library-on-linux

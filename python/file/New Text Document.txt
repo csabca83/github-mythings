@@ -1,0 +1,13 @@
+with open('a.txt') as file_object: -megnyissuk a filet,egy dirben kell lenniuk --a with azert kell az open ele,mer miutan kiolvastunk a filebol a python bezarja azt igy buggokat kerulunk el.irhatunk open() t is siman csak nem csuk magatol,akkor kell a close().De ez igy biztonsagosabb.
+
+	content=file_object.read()  -a file object ezt miadtunk meg nevnek,kiolvassuk a valtozoba ami nalunk content
+	print(content)              -- kiirassuk a contentet
+
+
+
+
+with open('text_files\filename.txt') as file_object: -igy a text files mappaban fogja keresni ezt a nevu fajlt.
+
+file_path = 'C:\Users\ehmatthes\other_files\text_files\filename.txt'    --ez abszolut path,erdemes egy variableben tarolni mivel hosszu meretu
+with open(file_path) as file_object:
+	list=file_object.readlines()  -- a sorokat berakja egy listaba

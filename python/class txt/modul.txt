@@ -1,0 +1,1 @@
+a class importalasr teljesen ugyanazok a parancsok mint a def importalasra,csak annyi hogy ha hasznalsz child classot mindet bekell importalnod.

@@ -14,3 +14,4 @@ tab-akar a entry valtasnal
 shift tab-previous entry
 physical adress=mac adress
 bit>hexadecimal>ASCII igy keresi ki a stringet a gep!
+ftp-https://www.windowscentral.com/how-set-and-manage-ftp-server-windows-10

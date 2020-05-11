@@ -6,3 +6,4 @@ ZeroDivisionError. Python will raise this error when attempting to divide by 0.
 
 """czxxzxzxzxzcx
 zxcxczxzcx"""-multiline string
+a modulok a python standard libraryben vannak elteve,mas programozok altal irodtak
