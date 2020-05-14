@@ -21,6 +21,7 @@ int phiba;   //páratartalom
 int hhiba;   //külső hőmérséklet
 int mhiba;   // moisture,föld víztartalma
 int vhiba;   // víz hőmérséklete 
+int ihiba=0;
 int allapot=0; // Az lcd-én épp melyik értéket jelenítem meg,gombnyomással nő az értéke 2ig,után kinullázódik.Ha hibajelzés van nincs módunk tovább lépni.
 int hang=600;  //Hangszóró értéke
 
@@ -73,8 +74,12 @@ void loop(){
     vhiba=0;}
   else{vhiba=1;}
   
+  if(now.hour()==21){
+    ihiba=1;} 
+  if(now.hour()==7){
+    ihiba=0;}
   
-  
+  if(ihiba==0){
   if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){      // minden eshetőségnél kiírja,hogy melyik érték nem stimmel,egyszerre 2 értéket maximum.
     lcd.clear();
     lcd.setCursor(0,0);
@@ -255,7 +260,7 @@ void loop(){
     else{tone(9,hang);}
     digitalWrite(52,LOW);
     delay(20);}  
-
+  }
 
   
   gomb=digitalRead(11);   //a gombbal variálom az állapotokat.

@@ -1,0 +1,6 @@
+try:
+	a=int(input('szoszivan?'))
+except:
+	print('te okor')
+else:
+	print('ugyes voltal')	--barmilyen kod ami a tryon fugg ,az elsenel fog vegrehajtodni

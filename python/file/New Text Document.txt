@@ -11,3 +11,31 @@ with open('text_files\filename.txt') as file_object: -igy a text files mappaban 
 file_path = 'C:\Users\ehmatthes\other_files\text_files\filename.txt'    --ez abszolut path,erdemes egy variableben tarolni mivel hosszu meretu
 with open(file_path) as file_object:
 	list=file_object.readlines()  -- a sorokat berakja egy listaba
+
+filename='faszom.txt' ha ide faszom.py t irunk akkor python file lesz,ha csak a nevet irom akkor sima fajl
+with open(filename) as file_object:
+	content=file_object.readlines()
+real_content=[x.strip() for x in content]    -- igy szedjuk ki a whitespacekat a pythonbol
+if 'faszom' in real_content:
+	print('Megvagy faszom')
+
+filename='faszom.txt'
+string=''
+with open(filename) as file_object:
+	content=file_object.readlines()
+for x in content:
+	string+=x.strip()                    -- igy rakjuk stringbe
+if 'faszom' in string:                       -- ez igy jo :)       
+	print('Megvagy faszom')
+
+string.replace('faszom','nagyafaszom')      -- ez mukodik a kiolvasott contentnal de nem mukodik  a fileban sajnos
+
+
+
+with open(filename,'w') as file_object:     -- megkell neki adni hogy writable legyen a fajl,ilyenkor nem tudsz olvasni
+	file_object.write('szoszi/n')         -- mindent kitorol es ujra kezdi irni,magatol nem tesz new linet tehat ezt nekunk kell megoldani
+
+
+with open(filename,'a') as file_object:     -- ilyenkor append mondban tehat,hozza fog adni a fajlhoz nem kitorli elozot,ha nem talalja a fajlt letrehozza,ami csucsszuper
+	file_object.write('szosz\n')        -- itt is a newlineok
+	file_object.write('csa\n')	

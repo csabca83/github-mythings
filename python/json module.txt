@@ -1,0 +1,11 @@
+a json fileban tarolhassuk az adatokat pl jateknal,s ha kilepunk onnan behivjuk,igy nem vesz el az adat
+import json
+numbers=[1,2,3,4]
+with open('l.json','w') as file_object:    
+	json.dump(numbers,file_object)          --itt csak a file objectbe tehat a fileba menthessuk az adatot
+
+
+import json
+with open('l.json') as file_object:             -- igy hivjuk be
+	adatok=json.load(file_object)
+print(adatok)
