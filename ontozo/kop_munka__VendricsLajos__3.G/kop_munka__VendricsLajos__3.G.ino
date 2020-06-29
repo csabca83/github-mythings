@@ -24,7 +24,7 @@ int vhiba;   // víz hőmérséklete
 int ihiba=0;
 int allapot=0; // Az lcd-én épp melyik értéket jelenítem meg,gombnyomással nő az értéke 2ig,után kinullázódik.Ha hibajelzés van nincs módunk tovább lépni.
 int hang=600;  //Hangszóró értéke
-
+int case_value;
 void setup(){
   lcd.init();
   lcd.backlight();               
@@ -35,6 +35,57 @@ void setup(){
   pinMode(11,INPUT_PULLUP);         //lcd változtatása
   pinMode(52,OUTPUT);}              //relé
 
+void hibak(){
+if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){      
+    case_value=0;}
+  else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==0){            
+    case_value=1;}
+  
+  else if(fhiba==0 && hhiba==0 && phiba==1 && mhiba==0 && vhiba==0){
+    case_value=2;}
+  
+  else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==1 && vhiba==0){
+    case_value=3;}
+  
+  else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==1){
+    case_value=4;}
+  
+  else if(fhiba==0 && hhiba==1 && phiba==1 && mhiba==0 && vhiba==0){
+    case_value=5;}
+  
+  else if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==1 && vhiba==0){
+    case_value=6;}
+  
+  else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==1 && vhiba==0){
+    case_value=7;}
+  
+  else if(fhiba==0 && hhiba==0 && phiba==1 && mhiba==1 && vhiba==0){
+    case_value=8;}
+ 
+  else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==1 && vhiba==1){
+    case_value=9;}
+
+  else if(fhiba==1 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==0){
+    case_value=10;}
+  
+  else if(fhiba==1 && hhiba==0 && phiba==1 && mhiba==0 && vhiba==0){
+    case_value=11;}
+  
+ else if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==1){
+    case_value=12;}
+  
+ else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==1){
+    case_value=13;}
+  
+ else if(fhiba==0 && hhiba==0 && phiba==1 && mhiba==0 && vhiba==1){
+    case_value=14;}
+  
+  else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){  
+    case_value=15;}
+  
+  else{                                          
+    case_value=16;}
+}
 void loop(){
   int chk = DHT11.read(DHT11_PIN);
   sensors.requestTemperatures();
@@ -80,18 +131,21 @@ void loop(){
     ihiba=0;}
   
   if(ihiba==0){
-  if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){      // minden eshetőségnél kiírja,hogy melyik érték nem stimmel,egyszerre 2 értéket maximum.
+  hibak();
+  }
+  switch(case_value){
+    case 0:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a feny");
     lcd.setCursor(0,1);
     lcd.print(light);
-    if (hang==0){noTone(9);}          //ha a hang 0,nemszól a riasztó ellenkező esetben igen.Kikellet kapcsolnom  a riasztót mivel 0 frekvenciánál is adott ki magából hangot.
+    if (hang==0){noTone(9);}          
     else{tone(9,hang);}
-    digitalWrite(52,HIGH);               // a relé kikapcsolt állapotban marad,addig amíg csak a föld víztartalma jelez hibát.Ezzel azt oldjuk meg,hogy nem kezd el délben 40 fokos vízzel öntözni :)
-    delay(20);}
+    digitalWrite(52,HIGH);               
+    break;
   
-  else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==0){            // A sok if az egyik dolog ami zavar,de mivel minden varációt kiakarok iratni,máskép nem tudtam megoldani.
+    case 1:            
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a homerseklet");
@@ -100,9 +154,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+     break; 
   
-  else if(fhiba==0 && hhiba==0 && phiba==1 && mhiba==0 && vhiba==0){
+    case 2:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a paratartalom");
@@ -111,10 +165,10 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+     break; 
   
   
-  else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==1 && vhiba==0){
+    case 3:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Keves a vizt.");
@@ -123,9 +177,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,LOW);
-    delay(20);}
+     break; 
   
-  else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==1){
+    case 4:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a vizho");
@@ -134,9 +188,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+     break; 
   
-  else if(fhiba==0 && hhiba==1 && phiba==1 && mhiba==0 && vhiba==0){
+    case 5:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a homerseklet");
@@ -145,9 +199,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+     break; 
   
-  else if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==1 && vhiba==0){
+    case 6:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a feny");
@@ -156,9 +210,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+     break; 
   
-  else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==1 && vhiba==0){
+    case 7:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a homerseklet");
@@ -167,9 +221,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+     break; 
   
-  else if(fhiba==0 && hhiba==0 && phiba==1 && mhiba==1 && vhiba==0){
+    case 8:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Keves a vizt.");
@@ -178,9 +232,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+     break; 
   
-  else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==1 && vhiba==1){
+    case 9:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Keves a vizt.");
@@ -189,9 +243,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+     break; 
 
-  else if(fhiba==1 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==0){
+    case 10:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a feny");
@@ -200,9 +254,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+    break; 
   
-  else if(fhiba==1 && hhiba==0 && phiba==1 && mhiba==0 && vhiba==0){
+    case 11:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a feny");
@@ -211,9 +265,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+    break; 
   
- else if(fhiba==1 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==1){
+    case 12:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a feny");
@@ -222,9 +276,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+    break; 
   
-  else if(fhiba==0 && hhiba==1 && phiba==0 && mhiba==0 && vhiba==1){
+    case 13:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a homerseklet");
@@ -233,9 +287,9 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+    break; 
   
-  else if(fhiba==0 && hhiba==0 && phiba==1 && mhiba==0 && vhiba==1){
+    case 14:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Nagy a vizho");
@@ -244,13 +298,13 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,HIGH);
-    delay(20);}
+     break; 
   
-  else if(fhiba==0 && hhiba==0 && phiba==0 && mhiba==0 && vhiba==0){  //ha minden érték megfelelő
+    case 15:
     noTone(9);
-    digitalWrite(52,HIGH);}
-  
-  else{                                          // hogyha 3 vagy több érték nem megfelelő
+    digitalWrite(52,HIGH);
+     break; 
+    case 16:
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("2-nel tobb ertek");
@@ -259,7 +313,7 @@ void loop(){
     if (hang==0){noTone(9);}
     else{tone(9,hang);}
     digitalWrite(52,LOW);
-    delay(20);}  
+    break; 
   }
 
   
