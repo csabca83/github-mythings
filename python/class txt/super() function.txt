@@ -1,0 +1,16 @@
+class Animal:
+	def __init__(self,name): --ha pl a nam
+		self.kor=5
+		self.name=name
+		print('	okos {}'.format(self.name))
+	def kiiratas(self):
+		print(self.kor)
+class Dog(Animal):
+	def __init__(self):
+	print('valami')	
+	super().__init__('Szoszi') -a parent __init__ alapbol nem fut le,a superrel futassuk le
+doggo=Dog()
+doggo                 --igy tudjuk csak az initet futtatni
+
+
+	
