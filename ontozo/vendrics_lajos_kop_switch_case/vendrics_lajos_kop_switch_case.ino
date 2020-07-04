@@ -1,13 +1,3 @@
-#define BLYNK_USE_DIRECT_CONNECT
-#include <SoftwareSerial.h>
-SoftwareSerial DebugSerial(2, 3); // RX, TX
-
-#define BLYNK_PRINT DebugSerial
-#include <BlynkSimpleSerialBLE.h>
-
-// You should get Auth Token in the Blynk App.
-// Go to the Project Settings (nut icon).
-char auth[] = "iOvd1EtJNj4LGgxJtSfrwC7EXvKAGcA6";
 #include <dht11.h>                              //Be importálom a librariket.
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
@@ -36,16 +26,6 @@ int allapot=0; // Az lcd-én épp melyik értéket jelenítem meg,gombnyomással
 int hang=600;  //Hangszóró értéke
 int case_value;
 void setup(){
-  DebugSerial.begin(9600);
-
-  DebugSerial.println("Waiting for connections...");
-
-  // Blynk will work through Serial
-  // 9600 is for HC-06. For HC-05 default speed is 38400
-  // Do not read or write this serial manually in your sketch
-  Serial.begin(9600);
-  Blynk.begin(Serial, auth);
-  
   lcd.init();
   lcd.backlight();               
   Serial.begin(9600);
@@ -117,7 +97,7 @@ void loop(){
   light=analogRead(15);
   light=1023-light;        // a light resistorjaim fény hatására csökkentették az értéküket,ezután növelni kezdik.
   DateTime now = rtc.now();                                                                                   
-  Blynk.run();
+  
   gomb2=digitalRead(10);                   //hibaüzenetnél szól a hangszóró,a gomb lenyomásával némíthassuk
   if (gomb2==0){
     if (hang==0){
