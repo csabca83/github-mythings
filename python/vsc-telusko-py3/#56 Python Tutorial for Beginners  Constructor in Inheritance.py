@@ -12,9 +12,9 @@ class Mama:
 class Anyu(Mama):
     def __init__(self,kirandulas_hely):
         self.vakacio=self.Vaka()
-        self.kirandulas_hely=kirandulas_hely
-        super().__init__()
-        self.megiteles='40es'
+        self.kirandulas_hely=kirandulas_hely     #ezek a instance variablek pluszban lesznek
+        super().__init__()                       #behuzzuk a parent classbol
+        self.megiteles='40es'                      #azert irjuk utana hogy ezzel atirjuk a instance variablet,elotte irnank akkor a parentos init irna at a mienket
     def describe(self):
         print('O az',self.name)
         super().describe()

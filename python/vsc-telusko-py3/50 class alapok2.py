@@ -1,10 +1,16 @@
 class Value:
+    variable=5
     def __init__(self,age):
         self.age=age
+        if type(self.value)==str:
+            print('Ez egy string')
+        elif type(self.value)==int:
+            print('Ez egy int')
     def update(self):
         self.age=40
     def describe(self):
         print(self.age)
+        print(self.variable)
 value1=Value(20) #a 20at irja be a self.agere
 value2=Value(30)
 value1.update() # a value1et berakja a self hlyere igy lesz Value.update(value1)
