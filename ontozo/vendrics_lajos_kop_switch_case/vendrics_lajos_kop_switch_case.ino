@@ -105,7 +105,7 @@ void loop(){
     else if (hang==600){
       hang=0;}}
   
-  if (light<870){                         // ha nem megfelelő az érték,akkor a hibánál 1es lesz
+  if (light<900){                         // ha nem megfelelő az érték,akkor a hibánál 1es lesz
     fhiba=0;}
   else{fhiba=1;}
 
@@ -113,11 +113,11 @@ void loop(){
     hhiba=0;}
   else{hhiba=1;}
   
-  if(paratartalom<70.00){
+  if(paratartalom<75.00){
     phiba=0;}
   else{phiba=1;}
 
-  if (moisture>150){
+  if (moisture>300){
     mhiba=0;}
   else{mhiba=1;}  
  
